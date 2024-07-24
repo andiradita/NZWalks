@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZWalksAPI", "NZWalksAPI\NZWalksAPI.csproj", "{43AD9A42-D9B3-4629-A58F-B11C3DF2A23D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NZWalksAPI", "NZWalksAPI\NZWalksAPI.csproj", "{43AD9A42-D9B3-4629-A58F-B11C3DF2A23D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZWalksUI", "NZWalksUI\NZWalksUI.csproj", "{540CD747-6B7E-4E64-837C-37B661BBECF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{43AD9A42-D9B3-4629-A58F-B11C3DF2A23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43AD9A42-D9B3-4629-A58F-B11C3DF2A23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43AD9A42-D9B3-4629-A58F-B11C3DF2A23D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540CD747-6B7E-4E64-837C-37B661BBECF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540CD747-6B7E-4E64-837C-37B661BBECF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540CD747-6B7E-4E64-837C-37B661BBECF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540CD747-6B7E-4E64-837C-37B661BBECF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
