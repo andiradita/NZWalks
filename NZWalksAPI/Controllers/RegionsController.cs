@@ -1,13 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
+﻿using System.Text.Json;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 using NZWalksAPI.CustomActionFilters;
-using NZWalksAPI.Data;
 using NZWalksAPI.Models.Domain;
 using NZWalksAPI.Models.DTO;
 using NZWalksAPI.Repositories;
@@ -30,7 +25,7 @@ namespace NZWalksAPI.Controllers
             this.logger = logger;
         }
         [HttpGet]
-        //[Authorize(Roles ="Reader")]
+        [Authorize(Roles ="Reader")]
         public async Task<IActionResult> GetAll()
         {
             logger.LogInformation("Log Started : get all regions");
