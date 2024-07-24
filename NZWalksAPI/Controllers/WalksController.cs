@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NZWalksAPI.CustomActionFilters;
 using NZWalksAPI.Models.Domain;
@@ -22,6 +23,7 @@ namespace NZWalksAPI.Controllers
 
         [HttpPost]
         [ValidateModel]
+        [Authorize(Roles ="Writer")]
         public async Task<IActionResult> Create([FromBody] AddWalkRequestDto request)
         {
             var walkDomainModel = mapper.Map<Walk>(request);
@@ -34,6 +36,7 @@ namespace NZWalksAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles ="Reader")]
         public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
             [FromQuery] int pageNumber = 1, [FromQuery] int PageSize = 1000)
@@ -46,6 +49,7 @@ namespace NZWalksAPI.Controllers
 
         [HttpGet]
         [Route("{id:guid}")]
+        [Authorize(Roles ="Reader")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var walkDomainModel = await walkRepository.GetByIdAsync(id);
@@ -61,6 +65,7 @@ namespace NZWalksAPI.Controllers
         [HttpPut]
         [Route("{id:guid}")]
         [ValidateModel]
+        [Authorize(Roles ="Writer")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateWalkRequestDto request)
         {
             var walkDomainModel = mapper.Map<Walk>(request);
@@ -78,6 +83,7 @@ namespace NZWalksAPI.Controllers
 
         [HttpDelete]
         [Route("{id:guid}")]
+        [Authorize(Roles ="Writer")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var deleteWalkDomain = await walkRepository.DeleteAsync(id);
